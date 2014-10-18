@@ -265,6 +265,13 @@ class Haanga
 
     public static function getTemplatePath($file)
     {
+        if(strpos($file, '::')){
+          $part = explode('::', $file);
+          if(isset(self::$templates_dir[$part[0]])){
+            return self::$templates_dir[$part[0]].'/'.$part[1];
+          }
+          throw new \RuntimeException("Cannot find {$file} file  (looked in ".self::$templates_dir[$part[0]].")");
+        }
         foreach (self::$templates_dir as $dir) {
             $tpl = $dir .'/'.$file;
             if (is_file($tpl)) {
