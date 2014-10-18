@@ -82,6 +82,7 @@ spl_autoload_register(function ($class) {
   'haanga_extension_tag_css' => '/Extension/Tag/Css.php',
   'haanga_extension_tag_js' => '/Extension/Tag/Js.php',
   'haanga_extension_tag_img' => '/Extension/Tag/Img.php',
+  'haanga_extension_tag_link' => '/Extension/Tag/Link.php',
   'haanga_extension_tag_def' => '/Extension/Tag/Def.php',
   'haanga_extension_tag_partial' => '/Extension/Tag/Partial.php',
   'haanga_ast' => '/AST.php',
