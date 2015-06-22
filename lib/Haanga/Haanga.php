@@ -50,7 +50,7 @@ if (!defined('HAANGA_VERSION')) {
  *  cache (compiled template) or it is out-dated.
  *
  */
-class Haanga
+class Haanga_Haanga
 {
     protected static $cache_dir;
     protected static $templates_dir=array('.');
