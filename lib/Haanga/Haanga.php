@@ -164,12 +164,12 @@ class Haanga_Haanga
         if (!is_dir($dir)) { 
             $old = umask(0);
             if (!mkdir($dir, 0777, TRUE)) {
-                throw new Haanga_Exception("{$dir} is not a valid directory");
+                throw new Haanga_Exception("{$dir}/ is not a valid directory");
             }
             umask($old);
         }
         if (!is_writable($dir)) {
-            throw new Haanga_Exception("{$dir} can't be written");
+            throw new Haanga_Exception("{$dir}/ can't be written");
         }
     }
     // }}}
@@ -200,19 +200,19 @@ class Haanga_Haanga
 
             /* Load needed files (to avoid autoload as much as possible) */
             $dir = __DIR__;
-            require_once "{$dir}AST.php";
-            require_once "{$dir}Compiler.php";
-            require_once "{$dir}Compiler/Runtime.php";
-            require_once "{$dir}Compiler/Parser.php";
-            require_once "{$dir}Compiler/Tokenizer.php";
-            require_once "{$dir}Generator/PHP.php";
-            require_once "{$dir}Extension.php";
-            require_once "{$dir}Extension/Filter.php";
-            require_once "{$dir}Extension/Tag.php";
+            require_once "{$dir}/AST.php";
+            require_once "{$dir}/Compiler.php";
+            require_once "{$dir}/Compiler/Runtime.php";
+            require_once "{$dir}/Compiler/Parser.php";
+            require_once "{$dir}/Compiler/Tokenizer.php";
+            require_once "{$dir}/Generator/PHP.php";
+            require_once "{$dir}/Extension.php";
+            require_once "{$dir}/Extension/Filter.php";
+            require_once "{$dir}/Extension/Tag.php";
 
             /* load compiler (done just once) */
             if (self::$use_autoload) {
-                require_once "{$dir}Loader.php";
+                require_once "{$dir}/Loader.php";
             }
 
             $compiler = new Haanga_Compiler_Runtime;
