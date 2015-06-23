@@ -199,20 +199,20 @@ class Haanga_Haanga
         if (!$compiler) {
 
             /* Load needed files (to avoid autoload as much as possible) */
-            $dir = dirname(__FILE__);
-            require_once "{$dir}/Haanga/AST.php";
-            require_once "{$dir}/Haanga/Compiler.php";
-            require_once "{$dir}/Haanga/Compiler/Runtime.php";
-            require_once "{$dir}/Haanga/Compiler/Parser.php";
-            require_once "{$dir}/Haanga/Compiler/Tokenizer.php";
-            require_once "{$dir}/Haanga/Generator/PHP.php";
-            require_once "{$dir}/Haanga/Extension.php";
-            require_once "{$dir}/Haanga/Extension/Filter.php";
-            require_once "{$dir}/Haanga/Extension/Tag.php";
+            $dir = __DIR__;
+            require_once "{$dir}AST.php";
+            require_once "{$dir}Compiler.php";
+            require_once "{$dir}Compiler/Runtime.php";
+            require_once "{$dir}Compiler/Parser.php";
+            require_once "{$dir}Compiler/Tokenizer.php";
+            require_once "{$dir}Generator/PHP.php";
+            require_once "{$dir}Extension.php";
+            require_once "{$dir}Extension/Filter.php";
+            require_once "{$dir}Extension/Tag.php";
 
             /* load compiler (done just once) */
             if (self::$use_autoload) {
-                require_once "{$dir}/Haanga/Loader.php";
+                require_once "{$dir}Loader.php";
             }
 
             $compiler = new Haanga_Compiler_Runtime;
